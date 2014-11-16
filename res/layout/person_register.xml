@@ -1,0 +1,118 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+<!-- 整个标题栏 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_bg" >
+
+        <!-- 后退按钮 -->
+
+        <LinearLayout
+            android:id="@+id/person_register_backbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/title_item_selector"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_gravity="left" >
+
+            <ImageView
+                android:id="@+id/title_icon_left"
+                style="@style/backStyle"
+                android:src="@drawable/back" />
+        </LinearLayout>
+
+        <!-- title txt -->
+
+        <TextView
+            style="@style/titleTxtStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/person_register_title" />
+
+       
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="40dp"
+        android:layout_weight="1"
+        android:background="@android:color/white" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            
+             
+            <EditText
+                 style="@style/edit_box"
+                android:id="@+id/person_register_phone"
+                android:hint="@string/person_register_phone"/>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent" 
+                                    android:layout_marginBottom="10dp"
+                                    android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/person_register_validmsg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+
+                    android:hint="@string/person_register_validmsg"
+                    android:paddingLeft="20dp"
+                    android:textColor="#333333"
+                    android:textSize="15sp" />
+                <Button 
+                    android:id="@+id/person_register_getMsgBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:layout_toRightOf="@id/person_register_validmsg"
+                    android:background="@drawable/button"
+                    android:textColor="@color/white"
+                    android:layout_gravity="right"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="获取验证码"
+                    android:visibility="gone"/>
+            </FrameLayout>
+
+            <EditText
+                style="@style/edit_box"
+                android:id="@+id/person_register_password"
+                android:hint="@string/person_register_password"
+                android:inputType="textPassword" />
+
+            <EditText
+                style="@style/edit_box"
+                android:id="@+id/person_register_pwdagain"
+                android:hint="@string/person_register_pwdagain"
+                android:inputType="textPassword" />
+
+<!-- 注册按钮 -->
+            <Button
+                android:id="@+id/person_register_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp"
+                android:text="@string/person_register_title"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
