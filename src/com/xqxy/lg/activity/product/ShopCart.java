@@ -21,7 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 import com.xqxy.lg.activity.MenuBottom;
 import com.xqxy.lg.activity.person.PersonLogin;
 import com.xqxy.lg.base.BaseActivity;

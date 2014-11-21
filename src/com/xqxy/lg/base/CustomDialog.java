@@ -1,6 +1,6 @@
 package com.xqxy.lg.base;
 
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 
 import android.app.Dialog;
 import android.content.Context;

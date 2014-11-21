@@ -18,7 +18,7 @@ import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
 import com.unionpay.UPPayAssistEx;
 import com.unionpay.uppay.PayActivity;
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -46,10 +46,10 @@ public class PayMethod extends Activity implements OnClickListener {
 	private String oid;
 	private String hc="";
 
-//	private static String mMode = "01";// 设置测试模式:01为测�?00为正式环�?
+//	private static String mMode = "01";// 设置测试模式:01为测�?00为正式环�?
 //	private static final String TN_URL_01 = "http://www.zhoulinjk.com/unionpay_app/instance/tn.php";// 银联获取TN接口
-//	private static final int BANK_PAY = 3;// 银联卡支�?
-	private static final int RQF_PAY = 1;// 支付宝支�?
+//	private static final int BANK_PAY = 3;// 银联卡支�?
+	private static final int RQF_PAY = 1;// 支付宝支�?
 	private static final int RQF_LOGIN = 2;
 
 	@Override
@@ -78,10 +78,10 @@ public class PayMethod extends Activity implements OnClickListener {
 		case R.id.back:
 			finish();
 			break;
-		case R.id.alipay:// 支付宝支付接�?
+		case R.id.alipay:// 支付宝支付接�?
 			alipay();
 			break;
-//		case R.id.bankpay:// 银联卡支付接�?
+//		case R.id.bankpay:// 银联卡支付接�?
 //			bankpay();
 //			break;
 		}
@@ -118,7 +118,7 @@ public class PayMethod extends Activity implements OnClickListener {
 //										msg.obj = tn;
 //										mHandler.sendMessage(msg);
 //									} else {
-//										Toast.makeText(PayMethod.this, "连接服务器失�?,
+//										Toast.makeText(PayMethod.this, "连接服务器失�?,
 //												2000);
 //									}
 //								} catch (JSONException e) {
@@ -146,7 +146,7 @@ public class PayMethod extends Activity implements OnClickListener {
 			price="0.01";
 		oid = intent.getStringExtra("oid");
 		Log.i("test", "subject:"+subject+",price:"+price+",oid-->"+oid+",hc:"+hc);
-		// 支付宝支付接�?
+		// 支付宝支付接�?
 		StringBuilder sb = new StringBuilder();
 		sb.append("partner=\"");
 		sb.append(Keys.DEFAULT_PARTNER);
@@ -161,7 +161,7 @@ public class PayMethod extends Activity implements OnClickListener {
 		sb.append("\"&total_fee=\"");
 		sb.append(price);
 		sb.append("\"&notify_url=\"");
-		// 网址�?��做URL编码
+		// 网址�?��做URL编码
 		sb.append(URLEncoder
 				.encode("http://www.jdhuitong.com/alipay3/notify_url.php"));
 		sb.append("\"&service=\"mobile.securitypay.pay");
@@ -172,7 +172,7 @@ public class PayMethod extends Activity implements OnClickListener {
 		sb.append("\"&payment_type=\"1");
 		sb.append("\"&seller_id=\"");
 		sb.append(Keys.DEFAULT_SELLER);
-		// 如果show_url值为空，可不�?
+		// 如果show_url值为空，可不�?
 		// sb.append("\"&show_url=\"");
 		sb.append("\"&it_b_pay=\"1m");
 		sb.append("\"");
@@ -181,7 +181,7 @@ public class PayMethod extends Activity implements OnClickListener {
 		Log.i("test", "sign-->" + sign);
 		sign = URLEncoder.encode(sign);
 		info += "&sign=\"" + sign + "\"&" + getSignType();
-		// 获取订单组装字符�?
+		// 获取订单组装字符�?
 		final String orderInfo = info;
 		Log.i("test", "info-->" + orderInfo);
 		new Thread() {
@@ -241,7 +241,7 @@ public class PayMethod extends Activity implements OnClickListener {
 //					AlertDialog.Builder builder = new AlertDialog.Builder(
 //							PayMethod.this);
 //					builder.setTitle("错误提示");
-//					builder.setMessage("网络连接失败,请重�?");
+//					builder.setMessage("网络连接失败,请重�?");
 //					builder.setNegativeButton("确定",
 //							new DialogInterface.OnClickListener() {
 //								@Override

@@ -1,6 +1,6 @@
 package com.xqxy.lg.base;
 
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 
 import android.content.Context;
 import android.graphics.Bitmap;

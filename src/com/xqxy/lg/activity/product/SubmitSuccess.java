@@ -1,7 +1,7 @@
 package com.xqxy.lg.activity.product;
 
 
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 import com.xqxy.lg.activity.MenuBottom;
 
 import android.app.Activity;

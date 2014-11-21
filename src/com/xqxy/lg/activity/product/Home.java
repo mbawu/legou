@@ -38,7 +38,7 @@ import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.NetworkImageView;
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 import com.xqxy.lg.base.BaseActivity;
 import com.xqxy.lg.base.ChangeTime;
 import com.xqxy.lg.base.MyAdapter;

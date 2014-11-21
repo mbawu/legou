@@ -6,7 +6,7 @@ import java.util.List;
 
 
 import com.android.volley.toolbox.NetworkImageView;
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 import com.xqxy.lg.activity.person.Person;
 import com.xqxy.lg.activity.person.PersonAddress;
 import com.xqxy.lg.activity.person.PersonCoupon;

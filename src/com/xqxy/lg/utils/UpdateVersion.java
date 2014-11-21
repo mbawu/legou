@@ -7,7 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import org.xmlpull.v1.XmlPullParser;
 
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 import com.xqxy.lg.base.CustomDialog;
 import com.xqxy.lg.base.MyApplication;
 

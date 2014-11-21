@@ -29,7 +29,7 @@ import cn.jpush.android.api.JPushInterface;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 import com.xqxy.lg.base.BaseFragmentActivity;
 import com.xqxy.lg.base.CustomDialog;
 import com.xqxy.lg.base.MyApplication;

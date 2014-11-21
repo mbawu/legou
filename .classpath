@@ -6,7 +6,7 @@
 	<classpathentry kind="lib" path="libs/jpush-sdk-release1.6.3.jar"/>
 	<classpathentry kind="lib" path="libs/volley.jar"/>
 	<classpathentry kind="lib" path="libs/UPPayAssistEx.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/learn/code/Android/Project/zhoulin/libs/UPPayPluginEx.jar"/>
+	<classpathentry kind="lib" path="libs/UPPayPluginEx.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="output" path="bin/classes"/>

@@ -1,6 +1,6 @@
 package com.xqxy.lg.activity.person;
 
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 
 import android.app.Activity;
 import android.os.Bundle;

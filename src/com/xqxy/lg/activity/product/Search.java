@@ -28,7 +28,7 @@ import android.widget.Toast;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 import com.xqxy.lg.base.BaseActivity;
 import com.xqxy.lg.base.MyAdapter;
 import com.xqxy.lg.base.MyApplication;

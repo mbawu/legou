@@ -2,7 +2,7 @@ package com.xqxy.lg.activity;
 
 import cn.jpush.android.api.JPushInterface;
 
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 import com.xqxy.lg.activity.person.Person;
 import com.xqxy.lg.activity.product.Home;
 import com.xqxy.lg.activity.product.ProductList;

@@ -2,7 +2,7 @@ package com.xqxy.lg.activity;
 
 import cn.jpush.android.api.JPushInterface;
 
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 import com.xqxy.lg.base.BaseActivity;
 import com.xqxy.lg.base.MyApplication;
 

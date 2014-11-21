@@ -9,7 +9,7 @@ import org.json.JSONObject;
 import com.android.volley.VolleyError;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 import com.xqxy.lg.activity.MenuBottom;
 import com.xqxy.lg.base.MyApplication;
 import com.xqxy.lg.base.Url;

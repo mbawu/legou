@@ -15,7 +15,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.toolbox.NetworkImageView;
-import com.xqxy.hrht.R;
+import com.xqxy.lg.R;
 import com.xqxy.lg.activity.MenuBottom;
 import com.xqxy.lg.activity.person.PersonLogin;
 import com.xqxy.lg.base.ChangeTime;
@@ -866,7 +866,7 @@ public class ProductDetail extends Activity implements OnClickListener,
 									Intent intent = new Intent(
 											Intent.ACTION_CALL, Uri
 													.parse("tel:"
-															+ "4000838310"));
+															+ "4009609660"));
 									ProductDetail.this.startActivity(intent);
 									dialog.cancel();
 								}
