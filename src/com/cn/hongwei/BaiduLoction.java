@@ -46,7 +46,8 @@ public class BaiduLoction {
 		// 返回的定位结果是百度经纬度，默认值gcj02
 		option.setCoorType(coorType);
 		// 设置发起定位请求的间隔时间为3000ms
-		option.setScanSpan(5000);
+//		option.setScanSpan(1000*60*5);
+		option.setScanSpan(1000*5);
 
 		option.setIsNeedAddress(true);
 		mLocationClient.setLocOption(option);

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import org.json.JSONObject;
+
 import android.app.Application;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -12,6 +14,11 @@ import android.content.SharedPreferences.Editor;
 import cn.jpush.android.api.JPushInterface;
 import cn.sharesdk.framework.ShareSDK;
 
+import com.android.volley.Response.ErrorListener;
+import com.android.volley.Response.Listener;
+import com.android.volley.VolleyError;
+import com.baidu.location.BDLocation;
+import com.cn.hongwei.BaiduLoction.LocationCallback;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -19,6 +26,8 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.xqxy.model.AutoLogin;
 import com.xqxy.model.Car;
 import com.xqxy.model.UserInfo;
+import com.xqxy.person.Cst;
+import com.xqxy.person.NetworkAction;
 
 public class MyApplication extends Application {
 
@@ -31,6 +40,11 @@ public class MyApplication extends Application {
 	public static boolean loginStat = false;
 	public static boolean refresh = false; // 是否需要刷新
 	public static NotificationManager mNotificationManager;
+	public static String lng = "0";
+	public static String lat = "0";
+	public static String address = "";
+	public static String detail = "";
+
 	@Override
 	public void onCreate() {
 		// TODO Auto-generated method stub
@@ -56,6 +70,49 @@ public class MyApplication extends Application {
 		mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		// 初始化JPUSH
 		JPushInterface.init(getApplicationContext());
+		getLocation();
+	}
+
+	private void getLocation() {
+		BaiduLoction.getInstance().startLocation();
+
+		BaiduLoction.getInstance().setLocationCallback(new LocationCallback() {
+
+			@Override
+			public void locationResult(BDLocation location) {
+				if (loginStat) {
+					address = location.getProvince() + location.getCity()
+							+ location.getDistrict();
+					detail = location.getStreet() + location.getStreetNumber();
+					lng = String.valueOf(location.getLongitude());
+					lat = String.valueOf(location.getLatitude());
+					HashMap<String, String> pramer = new HashMap<String, String>();
+					pramer.put("identity", identity);
+					pramer.put("lng", lng);
+					pramer.put("lat", lat);
+					client.postWithURL(Cst.HOST, pramer,
+							NetworkAction.centerF_location,
+							new Listener<JSONObject>() {
+
+								@Override
+								public void onResponse(JSONObject arg0) {
+									// TODO Auto-generated method stub
+
+								}
+							}, new ErrorListener() {
+
+								@Override
+								public void onErrorResponse(VolleyError arg0) {
+									// TODO Auto-generated method stub
+
+								}
+							});
+				}
+
+			}
+
+		});
+
 	}
 
 	// 获取拼接出来的请求字符串
@@ -99,9 +156,9 @@ public class MyApplication extends Application {
 		String autoLoginJson = sp.getString("autoLogin", null);
 		if (autoLogin != null && !"".equals(autoLoginJson)) {
 			autoLogin = JsonUtil.fromJson(autoLoginJson, AutoLogin.class);
-			MyApplication.loginStat=autoLogin.isLoginState();
+			MyApplication.loginStat = autoLogin.isLoginState();
 		}
-		
+
 		guide = sp.getString("guide", null);
 	};
 
@@ -114,11 +171,9 @@ public class MyApplication extends Application {
 
 	public void setCar(Car car) {
 		this.car = car;
-		if(car!=null)
-		{
+		if (car != null) {
 			ed.putString("car", JsonUtil.toJson(car));
-		}
-		else
+		} else
 			ed.putString("car", "");
 		ed.commit();
 	}
@@ -127,12 +182,12 @@ public class MyApplication extends Application {
 
 	public AutoLogin getAutoLogin() {
 		try {
-			String info=sp.getString("autoLogin", "");
+			String info = sp.getString("autoLogin", "");
 			return JsonUtil.fromJson(info, AutoLogin.class);
 		} catch (Exception e) {
 			return null;
 		}
-	
+
 	}
 
 	public void setAutoLogin(AutoLogin autoLogin) {
@@ -146,7 +201,7 @@ public class MyApplication extends Application {
 		}
 
 	}
-	
+
 	private String guide;
 
 	public String getGuide() {
@@ -158,16 +213,15 @@ public class MyApplication extends Application {
 		ed.putString("guide", guide);
 		ed.commit();
 	}
-	
-	
+
 	public static UserInfo getUserInfo() {
 		try {
-			String info=sp.getString("userInfo", "");
+			String info = sp.getString("userInfo", "");
 			return JsonUtil.fromJson(info, UserInfo.class);
 		} catch (Exception e) {
 			return null;
 		}
-	
+
 	}
 
 	public static void setUserInfo(UserInfo userInfo) {
@@ -180,6 +234,7 @@ public class MyApplication extends Application {
 		}
 
 	}
+
 	public NotificationManager getmNotificationManager() {
 		return mNotificationManager;
 	}
