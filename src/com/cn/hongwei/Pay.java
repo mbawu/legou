@@ -230,8 +230,8 @@ public class Pay {
 		orderInfo += "&total_fee=" + "\"" + price + "\"";
 
 		// 服务器异步通知页面路径
-		orderInfo += "&notify_url=" + "\"" + "http://car.xinlingmingdeng.com/api.php/pay/index";
-//				+ "\"";
+		orderInfo += "&notify_url=" + "\"" + "http://car.xinlingmingdeng.com/api.php/pay/index"
+				+ "\"";
 //		Log.i("test","notify_url---->"+"&notify_url=" + "\"" + "http://"+Constants.HOST+"/mobile/api/payment/alipayAndroid/notify_url.php"
 //				+ "\"");
 //		orderInfo += "&notify_url=" + "\"" + Constants.URL_ORDER_PAYMENT+"&key="+myapp.getLoginKey()+"&pay_sn="+subject
